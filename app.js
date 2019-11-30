@@ -16,6 +16,14 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(multer().none());
 
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+  })
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/login.html');
 })
