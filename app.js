@@ -21,8 +21,16 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCrea
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-    console.log("MongoDB database connection established successfully");
-  })
+  console.log("MongoDB database connection established successfully");
+});
+
+const loginRouter = require('./routes/login');
+const profileRouter = require('./routes/profile');
+const homeRouter = require('./routes/home');
+
+app.use('/login', loginRouter);
+app.use('/', homeRouter);
+app.use('/profile', profileRouter);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/login.html');
