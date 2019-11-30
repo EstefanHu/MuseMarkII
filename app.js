@@ -32,9 +32,9 @@ app.use('/login', loginRouter);
 app.use('/', homeRouter);
 app.use('/profile', profileRouter);
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/login.html');
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(__dirname + '/public/login.html');
+// })
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
