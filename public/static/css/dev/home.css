@@ -37,3 +37,15 @@ article {
   background: white;
   padding: 20px 40px;
 }
+
+aside {
+  position: fixed;
+  right: 10px;
+  top: 0;
+  width: 200px;
+  height: auto;
+}
+
+span {
+  display: block;
+}
