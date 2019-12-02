@@ -37,3 +37,8 @@ article {
   background: white;
   padding: 20px 40px;
 }
+
+#mapid {
+  height: 100vh;
+  z-index: 0;
+}
