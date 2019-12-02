@@ -4,14 +4,36 @@
 	padding: 0;
 }
 
+body {
+  background: #eee;
+}
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 50px;
+  background: rgb(39, 89, 240);
 }
 
 main {
+  width: 1000px;
+  height: auto;
+  padding-top: 20px;
+  margin-left: 80px;
+}
 
+section {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+article {
+  width: 500px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: white;
+  padding: 20px 40px;
 }
