@@ -7,11 +7,6 @@
 			.then(res => res.json())
 			.then(populateFeed)
 			.catch(console.err);
-		
-		fetch('https://jsonplaceholder.typicode.com/todos')
-			.then(res => res.json())
-			.then(getUpdates)
-			.catch(console.err);
 	}
 
 	function populateFeed(res) {
@@ -38,16 +33,5 @@
 
 	function getFooter(footer) {
 		return footer;
-	}
-
-	function getUpdates(res) {
-		const aside = document.querySelector('aside');
-		for (let i = 0; i < res.length; i++) {
-			let span = document.createElement('span');
-			let h3 = document.createElement('h3');
-			h3.textContent = res[i].title;
-			span.appendChild(h3);
-			aside.appendChild(span);
-		}
 	}
 })();
