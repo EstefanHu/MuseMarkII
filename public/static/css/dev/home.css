@@ -11,13 +11,16 @@ nav {
   bottom: 0;
   width: 50px;
   background: rgb(39, 89, 240);
+  z-index: 1;
 }
 
 main {
+  position: relative;
   width: 800px;
   height: auto;
   padding-top: 20px;
   margin-left: 80px;
+  z-index: 1;
 }
 
 section {
@@ -37,7 +40,7 @@ article {
 #mapid {
   height: 100vh;
   width: 100vw;
-  z-index: -1;
+  z-index: 0;
   position: fixed;
   top: 0;
   left: 0;
