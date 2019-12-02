@@ -9,7 +9,8 @@
 				id: 'mapbox.streets',
 				accessToken: 'your.mapbox.access.token'
 		}).addTo(mymap);
-new L.Control.Zoom({ position: 'topright' }).addTo(mymap);
+		new L.Control.Zoom({ position: 'topright' }).addTo(mymap);
+		
 		fetch('https://jsonplaceholder.typicode.com/posts')
 			.then(res => res.json())
 			.then(populateFeed)

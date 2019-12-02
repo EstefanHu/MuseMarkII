@@ -4,10 +4,6 @@
 	padding: 0;
 }
 
-body {
-  background: #eee;
-}
-
 nav {
   position: fixed;
   top: 0;
@@ -18,7 +14,7 @@ nav {
 }
 
 main {
-  width: 1000px;
+  width: 800px;
   height: auto;
   padding-top: 20px;
   margin-left: 80px;
@@ -40,5 +36,9 @@ article {
 
 #mapid {
   height: 100vh;
-  z-index: 0;
+  width: 100vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
