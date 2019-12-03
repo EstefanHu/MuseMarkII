@@ -39,10 +39,11 @@
 
 	function getArticle(article, res) {
 		let a = document.createElement('a');
-		let genre = document.createElement('h4');
+		let genre = document.createElement('p');
 		let cred = document.createElement('p');
-		let title = document.createElement('h2');
 		let a2 = document.createElement('a');
+		let title = document.createElement('h2');
+		let a3 = document.createElement('a');
 		let author = document.createElement('p');
 		let desc = document.createElement('p');
 		genre.textContent = res.genre;
@@ -52,15 +53,19 @@
 		cred.textContent = "Cred: " + res.credibility;
 		cred.classList.add('credibility');
 		title.textContent = res.title;
+		a2.href = '/'
+		a2.appendChild(title);
+		a2.classList.add('title');
 		author.textContent = "By: " + res.author;
-		a2.href = '/profile/' + res.authorId;
-		a2.appendChild(author);
-		a2.classList.add('author');
+		a3.href = '/profile/' + res.authorId;
+		a3.appendChild(author);
+		a3.classList.add('author');
 		desc.textContent = res.description;
+		desc.classList.add('description');
 		article.appendChild(a);
 		article.appendChild(cred);
-		article.appendChild(title);
 		article.appendChild(a2);
+		article.appendChild(a3);
 		article.appendChild(desc);
 		getFooter(article, res);
 		return article;

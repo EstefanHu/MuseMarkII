@@ -16,7 +16,7 @@ nav {
 
 main {
   position: relative;
-  width: 580px;
+  width: 630px;
   height: auto;
   padding: 10px 0 0 80px;
   z-index: 1;
@@ -43,16 +43,27 @@ article a {
 
 .genre {
   color: grey;
+  font-weight: bold;
+}
+
+.credibility {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.title {
+  color: black;
+  font-size: 1.2rem;
 }
 
 .author {
   color: black;
 }
 
-.credibility {
-  position: absolute;
-  top: 15px;
-  right: 20px;
+.description {
+  font-size: 1.2rem;
 }
 
 #mapid {
