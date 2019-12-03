@@ -4,7 +4,7 @@
 	
 	function init() {
 		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
+			// navigator.geolocation.getCurrentPosition(showPosition);
 		} else {
 			alert("Geolocation is not supported by this browser.");
 		}
@@ -27,13 +27,11 @@
 	}
 
 	function populateFeed(res) {
-		const main = document.querySelector('main');
+		const section = document.querySelector('section');
 		for (let i = 0; i < res.posts.length; i++) {
-			let section = document.createElement('section');
 			let article = document.createElement('article');
 			let footer = document.createElement('footer');
 			section.appendChild(getArticle(article, res.posts[i]));
-			main.appendChild(section);
 		}
 	}
 
