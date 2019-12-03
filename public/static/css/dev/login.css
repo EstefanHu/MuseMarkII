@@ -22,12 +22,32 @@ section {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.35);
 	color: white;
 	margin-bottom: 100px;
 	position: relative;
 	overflow: hidden;
 	height: 800px;
+}
+
+#hero form {
+
+}
+
+input {
+	display: block;
+	border: none;
+	border-radius: 15px;
+	height: 35px;
+	width: 300px;
+	margin-bottom: 10px;
+	font-size: 1.3rem;
+	padding: 5px 10px;
+}
+
+input[type=submit] {
+	background: blue;
+	color: white;
 }
 
 video {

@@ -10,7 +10,7 @@ nav {
   left: 0;
   bottom: 0;
   width: 60px;
-  background: rgb(39, 89, 240);
+  background: rgb(255, 153, 0);
   z-index: 1;
 }
 
@@ -18,7 +18,7 @@ main {
   position: relative;
   width: 580px;
   height: auto;
-  padding: 20px 0 0 80px;
+  padding: 10px 0 0 80px;
   z-index: 1;
 }
 
@@ -29,11 +29,30 @@ section {
 }
 
 article {
+  position: relative;
   width: 100%;
   border: 1px solid lightgray;
   border-radius: 5px;
   background: white;
-  padding: 20px 40px;
+  padding: 15px 40px;
+}
+
+article a {
+  text-decoration: none;
+}
+
+.genre {
+  color: grey;
+}
+
+.author {
+  color: black;
+}
+
+.credibility {
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
 #mapid {

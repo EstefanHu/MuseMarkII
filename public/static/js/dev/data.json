@@ -1,0 +1,112 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 1",
+      "authorId": "1",
+      "credibility": 20485
+    },
+    {
+      "id": 2,
+      "genre": "Short Story",
+      "title": "A Short Story about things",
+      "description": "This is a Short Story about things and the things are described by the Short Story",
+      "author": "Author 2",
+      "authorId": "1",
+      "credibility": 5843
+    },
+    {
+      "id": 3,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 3",
+      "authorId": "1",
+      "credibility": 809
+    },
+    {
+      "id": 4,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 1",
+      "authorId": "1",
+      "credibility": 20485
+    },
+    {
+      "id": 5,
+      "genre": "Short Story",
+      "title": "A Short Story about things",
+      "description": "This is a Short Story about things and the things are described by the Short Story",
+      "author": "Author 2",
+      "authorId": "1",
+      "credibility": 5843
+    },
+    {
+      "id": 6,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 3",
+      "authorId": "1",
+      "credibility": 809
+    },
+    {
+      "id": 7,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 1",
+      "authorId": "1",
+      "credibility": 20485
+    },
+    {
+      "id": 8,
+      "genre": "Short Story",
+      "title": "A Short Story about things",
+      "description": "This is a Short Story about things and the things are described by the Short Story",
+      "author": "Author 2",
+      "authorId": "1",
+      "credibility": 5843
+    },
+    {
+      "id": 9,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 3",
+      "authorId": "1",
+      "credibility": 809
+    },
+    {
+      "id": 10,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 1",
+      "authorId": "1",
+      "credibility": 20485
+    },
+    {
+      "id": 11,
+      "genre": "Short Story",
+      "title": "A Short Story about things",
+      "description": "This is a Short Story about things and the things are described by the Short Story",
+      "author": "Author 2",
+      "authorId": "1",
+      "credibility": 5843
+    },
+    {
+      "id": 12,
+      "genre": "Poetry",
+      "title": "A poem about things",
+      "description": "This is a poem about things and the things are described by the poem",
+      "author": "Author 3",
+      "authorId": "1",
+      "credibility": 809
+    }
+  ]
+}
