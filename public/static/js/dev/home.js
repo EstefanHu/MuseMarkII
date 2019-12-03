@@ -30,7 +30,6 @@
 		const section = document.querySelector('section');
 		for (let i = 0; i < res.posts.length; i++) {
 			let article = document.createElement('article');
-			let footer = document.createElement('footer');
 			section.appendChild(getArticle(article, res.posts[i]));
 		}
 	}
