@@ -4,8 +4,7 @@
 	
 	function init() {
 		if (navigator.geolocation) {
-			console.log('map rendered');
-			// navigator.geolocation.getCurrentPosition(showPosition);
+			navigator.geolocation.getCurrentPosition(showPosition);
 		} else {
 			alert("Geolocation is not supported by this browser.");
 		}
@@ -17,6 +16,7 @@
 	}
 
 	function showPosition(position) {
+		console.log(position.coords);
 		var mymap = L.map('mapid', {zoomControl: false}).setView([position.coords.latitude, position.coords.longitude], 15);
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZXN0ZWZhbjA3NCIsImEiOiJjanozbm83OXUwNHRqM25tcm84MHYxd3cyIn0.MSuA8qUuoo1A2aWOcXI5ng', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
