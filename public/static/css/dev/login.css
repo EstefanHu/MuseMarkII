@@ -24,9 +24,7 @@ section {
 	text-align: center;
 	background: rgba(0, 0, 0, 0.35);
 	color: white;
-	margin-bottom: 100px;
 	position: relative;
-	overflow: hidden;
 	height: 800px;
 }
 
@@ -48,25 +46,4 @@ input {
 input[type=submit] {
 	background: blue;
 	color: white;
-}
-
-video {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	min-width: 100%;
-	min-height: 100%;
-}
-
-@media only screen and (min-width: 1200px) {
-	video {
-		max-width: 140%;
-	}
-}
-
-@media only screen and (max-width: 1000px) {
-	video {
-		max-width: 230%;
-	}
 }
