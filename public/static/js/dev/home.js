@@ -10,7 +10,7 @@
 	}
 
 	function populateFeed(res) {
-		const section = document.querySelector('section');
+		const section = document.getElementById('feed');
 		for (let i = 0; i < res.posts.length; i++) {
 			let article = document.createElement('article');
 			section.appendChild(getArticle(article, res.posts[i]));
