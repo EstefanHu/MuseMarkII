@@ -1,7 +1,9 @@
 const router = require('express').Router();
+const path = require('path');
+const profilePath = __dirname + '/../public/profile/';
 
 router.route('/').get((req, res) => {
-    res.json('hello from Profile');
+    res.sendFile(path.resolve(profilePath + 'profile.html'));
 });
 
 router.route('/:id').get((req, res) => {
