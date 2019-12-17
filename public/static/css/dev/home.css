@@ -16,7 +16,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 50px;
   background: rgb(255, 153, 0);
   z-index: 10;
 }
@@ -33,14 +33,19 @@ nav a {
 }
 
 main {
+  display: flex;
   position: relative;
-  width: 500px;
+  width: 900px;
   height: auto;
-  padding: 10px 0 0 80px;
-  z-index: 1;
+  margin: 50px auto;
 }
 
-section {
+#city-nav {
+  width: 200px;
+  height: 200px;
+}
+
+#feed {
   width: 500px;
   height: auto;
 }
@@ -78,4 +83,12 @@ article {
 
 .description {
   font-size: 1.2rem;
+}
+
+aside {
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  right: 10px;
+  top: 60px;
 }
