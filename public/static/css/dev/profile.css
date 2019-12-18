@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+body {
+  background-color: #ffffff;
+}
+
 a {
   text-decoration: none;
 }
@@ -34,4 +38,25 @@ nav a {
 
 nav a:hover {
   color: grey;
+}
+
+main {
+  width: 900px;
+  margin: 60px auto;
+  height: auto;
+}
+
+#information {
+  width: 300px;
+  height: auto;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#profile-pic {
+  background-image: url("/static/imgs/default.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
 }
