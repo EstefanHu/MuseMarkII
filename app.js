@@ -1,11 +1,13 @@
 'use strict';
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const app = express();
+const cors = require('cors');
+const express = require('express');
+const mongoose = require('mongoose');
 const multer = require('multer');
 const session = require('express-session');
+
+const app = express();
+
 
 require('dotenv').config();
 
@@ -16,6 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 app.use(multer().none());
+app.use(session({secret: 'sshhhhhh'}));
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
@@ -26,8 +29,8 @@ connection.once('open', () => {
 });
 
 const loginRouter = require('./routes/login');
-const profileRouter = require('./routes/profile');
 const homeRouter = require('./routes/home');
+const profileRouter = require('./routes/profile');
 
 app.use('/login', loginRouter);
 app.use('/', homeRouter);
