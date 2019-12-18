@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const multer = require('multer');
+const session = require('express-session');
 
 require('dotenv').config();
 
