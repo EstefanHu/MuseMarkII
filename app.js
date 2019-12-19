@@ -112,6 +112,35 @@ app.get('/dashboard', async (req, res) => {
   }
 });
 
+// Could store in localstorage
+app.get('/profile', async (req, res) => {
+  if(!req.session.key) redirect('/');
+  try {
+    let user = req.session.firstName + req.session.lastName;
+    let qry = ''
+  } catch(err) {
+    console.log(err);
+    res.type('text').status(500).send(err);
+  }
+});
+
+app.post('/publish', async (req, res) => {
+  try {
+
+  } catch(err) {
+    console.log(err);
+    res.type('text').status(500).send(err);
+  }
+});
+
+app.update('/update', async (req, res) => {
+  try {
+
+  } catch(err) {
+    res.type('text').status(500).send(err);
+  }
+});
+
 app.get('/logout', (req, res) => {
   if (req.session.key) {
     req.session.destroy(() => {
