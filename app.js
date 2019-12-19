@@ -1,15 +1,29 @@
 'use strict';
-const bodyParser = require('body-parser');
-const cors = require('cors');
 const express = require('express');
-const mongoose = require('mongoose');
-const multer = require('multer');
+const redis = require('redis');
+const mysql = require('mysql');
 const session = require('express-session');
-
+const redisStore = require('connect-redis')(session);
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const path = require('path');
+const async = require('async');
+const client = redis.createClient();
+const cors = require('cors');
+const multer = require('multer');
 const app = express();
-
+const router = express.Router();
 
 require('dotenv').config();
+
+const pool = mysql.createPool({
+  connectionLimit: 100,
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'redis_demo', //change
+  debug: false
+});
 
 // EXPAND FOR AVERAGE SIZE OF POST
 app.use(bodyParser.json({ limit: '500kb' }));
@@ -18,15 +32,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 app.use(multer().none());
-app.use(session({secret: 'sshhhhhh'}));
-
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log("MongoDB database connection established successfully");
-});
+app.use(session({
+  secret: 'sshhhhhh',
+  store: new redisStore({host: 'localhost', port: 6379, client: client, ttl: 260}),
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(cookieParser('secretSign#143_!223'));
 
 const loginRouter = require('./routes/login');
 const homeRouter = require('./routes/home');
