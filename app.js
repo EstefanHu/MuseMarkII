@@ -36,7 +36,19 @@ app.use(cookieParser('secretSign#143_!223'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/dashboard/dashboard.html');
-})
+});
+
+app.get('/highlights/:city', async (req, res) => {
+  try {
+    let city = req.params.city;
+    let qry = 'SELECT FROM posts WHERE city=? ORDER BY DESC LIMIT 10';
+    let posts = await db.query(qry, city);
+    res.json({"posts": posts.rows});
+  } catch(err) {
+    console.log(err);
+    res.type('text').status(500).send('Something went wrong');
+  }
+});
 
 app.post('/register', async (req, res) => {
   let email = req.body.email;
@@ -81,6 +93,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// NEEDS PAGINATION
 app.get('/dashboard', async (req, res) => {
   if(!req.session.key) redirect('/');
   try {
@@ -91,8 +104,8 @@ app.get('/dashboard', async (req, res) => {
     let districts = await db.query(qryDistricts, city);
 
     res.json({
-      "districts": districts,
-      "posts": posts
+      "districts": districts.rows,
+      "posts": posts.rows
     });
   } catch(err) {
     res.type('text').status(500).send(err);
