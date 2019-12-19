@@ -35,7 +35,7 @@ app.use(session({
 app.use(cookieParser('secretSign#143_!223'));
 
 app.get('/', (req, res) => {
-  res.sendFile('/dashboard/dashboard.html');
+  res.sendFile(__dirname + '/public/dashboard/dashboard.html');
 })
 
 app.post('/register', async (req, res) => {
