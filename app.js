@@ -1,11 +1,14 @@
 'use strict';
 const express = require('express');
+const redis = require('redis');
 const mysql = require('mysql');
 const session = require('express-session');
+const redisStore = require('connect-redis')(session);
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const async = require('async');
+const client = redis.createClient();
 const cors = require('cors');
 const multer = require('multer');
 const app = express();
@@ -31,6 +34,7 @@ app.use(express.static('public'));
 app.use(multer().none());
 app.use(session({
   secret: 'sshhhhhh',
+  store: new redisStore({host: 'localhost', port: 6379, client: client, ttl: 260}),
   saveUninitialized: false,
   resave: false
 }));
