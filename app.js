@@ -102,12 +102,12 @@ function handle_database(req,type,callback) {
   });
 }
 
-const loginRouter = require('./routes/login');
 const homeRouter = require('./routes/home');
+const dashboardRouter = require('./routes/dashboard');
 const profileRouter = require('./routes/profile');
 
-app.use('/login', loginRouter);
 app.use('/', homeRouter);
+app.use('/dashboard', dashboardRouter);
 app.use('/profile', profileRouter);
 
 const port = process.env.PORT || 8000;
