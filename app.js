@@ -7,22 +7,19 @@ const redisStore = require('connect-redis')(session);
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const async = require('async');
 const client = redis.createClient();
 const cors = require('cors');
 const multer = require('multer');
 const app = express();
-const router = express.Router();
 
 require('dotenv').config();
 
-const pool = mysql.createPool({
-  connectionLimit: 100,
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'redis_demo', //change
-  debug: false
+const db = mysql.createPool({
+  host: process.env.DB_URL || 'localhost',
+	port: process.env.DB_PORT || '8889',
+	user: process.env.DB_USERNAME || 'root',
+	password: process.env.DB_PASSWORD || 'root',
+	database: process.env.DB_NAME || 'hw5db'
 });
 
 // EXPAND FOR AVERAGE SIZE OF POST
@@ -40,13 +37,13 @@ app.use(session({
 }));
 app.use(cookieParser('secretSign#143_!223'));
 
-const homeRouter = require('./routes/home');
-const dashboardRouter = require('./routes/dashboard');
-const profileRouter = require('./routes/profile');
+app.get('/', (req, res) => {
+  try {
 
-app.use('/', homeRouter);
-app.use('/dashboard', dashboardRouter);
-app.use('/profile', profileRouter);
+  } catch(err) {
+
+  }
+});
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
